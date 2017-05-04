@@ -1,3 +1,5 @@
+'use strict';
+
 var myString = String.prototype;
 
 myString.replaceAll = function(oldVal,newVal) {
@@ -8,7 +10,23 @@ myString.replaceAll = function(oldVal,newVal) {
 	}
 	var reg = new RegExp(oldVal,'ig');
 	return input.replace(reg,newVal);
-}
+};
+
+myString.camelCase = function() {
+    var inputString = this.valueOf();
+    var inputStringArr = inputString.split(' ');
+    var result = inputStringArr.map(function(word){
+        if(word.match(/^\w/i) !== null){
+            var first = word.slice(0,1).toUpperCase();
+            return first + word.slice(1);
+        }
+        else{
+            return word;
+        }
+    }).join(' ');
+
+    return result;
+};
 
 var myArray = Array.prototype;
 
@@ -25,7 +43,7 @@ myArray.sum = function(){
 	});
 
 	return totalSum;
-}
+};
 
 myArray.mean = function () {
 	if(this.constructor !== Array){
@@ -42,7 +60,7 @@ myArray.mean = function () {
 	});
 
 	return totalSum/totalCount;
-}
+};
 
 myArray.toJSON = function(keyPrefix) {
 	if(this.constructor !== Array){
@@ -73,7 +91,7 @@ myLocation.getQueryStringObj = function () {
 	}
 	
 	return obj;
-}
+};
 
 myLocation.setQueryString = function (obj) {
 	var queryString = '';
@@ -88,4 +106,4 @@ myLocation.setQueryString = function (obj) {
 	}
 
 	return queryString;
-}
+};

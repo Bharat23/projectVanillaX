@@ -12,9 +12,11 @@ module.exports = function(grunt){
 		},
 		uglify: {
 			options: {
-				banner: '/* <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> \n'+
-						'* Copyright (c) <%= grunt.template.today("YYYY") %> Bharat Sinha. All rights reserved. \n'+
-						'* Licensed under MIT*/\n'
+				banner: '/**\n' +
+						'* <%= pkg.name %> v<%= pkg.version %> (<%= grunt.template.today("dd-mm-yyyy") %>) \n*\n'+
+						'* Copyright (c) <%= grunt.template.today("yyyy") %> Bharat Sinha. All rights reserved. \n*\n'+
+						'* Licensed under MIT \n*\n' +
+                        '**/\n\n'
 			},
 			dist: {
 				files: {
