@@ -11,3 +11,8 @@ Some Features:
 - Can be used with Node JS (server side) and on Browser as well.
 
 We are in a very rudimentary stage and would love to hear from you. Please contact for any bug, functionality and suggestions.
+
+
+New Plug and Play Geolocation Library:
+
+- Forget the hassels of obtaining the Geo Coordinates from browser we have handled that just call our API and play with the coordinates.
