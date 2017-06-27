@@ -1,6 +1,6 @@
 {
   "name": "projectvanillax",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Vanilla JS on Steroids",
   "main": "index.js",
   "scripts": {
@@ -19,6 +19,7 @@
   "dependencies": {
     "grunt": "^1.0.1",
     "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-uglify": "^2.3.0"
   }
 }

@@ -6,7 +6,7 @@ module.exports = function(grunt){
 				separator: ';'
 			},
 			dist: {
-				src: ['src/**/*.js'],
+				src: ['src/main/*.js'],
 				dest: 'dist/<%= pkg.name %>.js'
 			}
 		},
@@ -20,14 +20,24 @@ module.exports = function(grunt){
 			},
 			dist: {
 				files: {
-					'dist/<%= pkg.name %>.min.js': ['<%= concat.dist.dest %>']
+					'dist/<%= pkg.name %>.min.js': ['<%= concat.dist.dest %>'],
+                    'dist/geolocation/vanillax.geolocation.min.js': ['dist/geolocation/vanillax.geolocation.js']
 				}
 			}
-		}
+		},
+        copy: {
+		    main: {
+		        expand: true,
+                cwd: 'src/',
+                src: 'geolocation/*.js',
+                dest: 'dist/'
+            }
+        }
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-concat');
+	grunt.loadNpmTasks('grunt-contrib-copy');
 
-	grunt.registerTask('default',['concat','uglify']);
+	grunt.registerTask('default',['concat','copy','uglify']);
 };
