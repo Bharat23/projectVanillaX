@@ -16,25 +16,20 @@
      };
 
      var checkSecureConnection = function (browserName) {
-         try {
-             if(typeof window.location !== 'undefined'){
-                 var myLocation = window.location;
-                 if(myLocation.href){
-                     if(myLocation.href.match(/^https\:/i) !== null){
-                         //on secure connection
-                     }
-                     else if(myLocation.href.match(/(localhost|file\:)/i) !== null){
-                        //localhost
-                         console.warn('Location API is not accessible on %s for non-secure domains as per Google Guidelines. However, you are on local please make sure that this API is used on secure domain.',browserName);
-                     }
-                     else{
-                         throw 'You are not on a secure connection';
-                     }
+         if(typeof window.location !== 'undefined'){
+             var myLocation = window.location;
+             if(myLocation.href){
+                 if(myLocation.href.match(/^https\:/i) !== null){
+                     //on secure connection
+                 }
+                 else if(myLocation.href.match(/(localhost|file\:)/i) !== null){
+                    //localhost
+                     console.warn('Location API is not accessible on %s for non-secure domains as per Google Guidelines. However, you are on local please make sure that this API is used on secure domain.',browserName);
+                 }
+                 else{
+                     throw 'You are not on a secure connection';
                  }
              }
-         }
-         catch (e) {
-             handleExceptions(e);
          }
      };
      var successLocation = function (position) {
