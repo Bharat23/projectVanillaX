@@ -16,3 +16,5 @@ I have always been a big fan of Vanilla JS (Native JS) and find its austerity th
 - Forget the hassels of obtaining the Geo Coordinates from browser we have handled that just call our API and play with the coordinates.
 
 We are in a very rudimentary stage and would love to hear from you. Please contact for any bug, functionality and suggestions.
+Read More: 
+https://github.com/Bharat23/projectVanillaX/wiki/Geolocation-API
